@@ -31,7 +31,6 @@ namespace ServerTools.Handlers
             string randomWord = ServerTools.Instance.Config.MTFNATO[randomNATO];
             int randomNATOnum = rand.Next(ServerTools.Instance.Config.MTFNumber.Count);
             string randomWordnum = ServerTools.Instance.Config.MTFNumber[randomNATOnum];
-
             Cassie.Message($"MtfUnit Epsilon 11 designated {randomWord} {randomWordnum} HasEntered AllRemaining AwaitingRecontainment pitch_0.3 .g6 SCP subjects");
         }
 
@@ -40,6 +39,7 @@ namespace ServerTools.Handlers
             if (ServerTools.Instance.Config.SCP079CausesBlackouts)
             {
                 Map.TurnOffAllLights(zoneTypes: Exiled.API.Enums.ZoneType.LightContainment, duration: 15);
+                Map.TurnOffAllLights(zoneTypes: Exiled.API.Enums.ZoneType.Surface, duration: 15);
                 Map.TurnOffAllLights(zoneTypes: Exiled.API.Enums.ZoneType.HeavyContainment, duration: 15);
             }
 

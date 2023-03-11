@@ -19,7 +19,7 @@ namespace ServerTools
         public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one!";
 
         [Description("The message that appears when 079 gets level 2")]
-        public string Level2 { get; set; } = "You can now play a scary noise! Use .079noise to play a weird sound.";
+        public string Level2 { get; set; } = "You can now play a scary noise! Use .079noise to play it";
 
         [Description("The NATO phonetic alphabetic words C.A.S.S.I.E will call when .fakeMTF is used. YOU HAVE TO USE NATO_ FOR IT TO WORK")]
         public List<string> MTFNATO { get; set; } = new List<string>

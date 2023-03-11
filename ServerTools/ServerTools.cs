@@ -31,7 +31,6 @@ namespace ServerTools
             base.OnDisabled();
         }
 
-
         public Handlers.SPlayer player;
         public Handlers.Server server;
 
