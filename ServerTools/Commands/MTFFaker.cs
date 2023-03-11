@@ -24,16 +24,16 @@ namespace ServerTools.Commands
                 return false;
             }
 
-            if (ServerTools.Instance.player.Nametocheck.Contains(playerCommandSender.Nickname))
+            if (ServerTools.Instance.player.Nametocheck.Contains(playerCommandSender.SenderId))
             {
-                if (cooldowns.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd) && DateTime.Now < cooldownEnd)
+                if (cooldowns.TryGetValue(playerCommandSender.SenderId, out DateTime cooldownEnd) && DateTime.Now < cooldownEnd)
                 {
                     response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd - DateTime.Now).TotalSeconds)} seconds.";
                     return false;
                 }
 
                 ServerTools.Instance.player.MTFAnnoucments();
-                cooldowns[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(120);
+                cooldowns[playerCommandSender.SenderId] = DateTime.Now.AddSeconds(120);
                 response = "Faked MTF announcement!";
                 return true;
             }

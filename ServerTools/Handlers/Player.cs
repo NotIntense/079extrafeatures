@@ -14,12 +14,12 @@ namespace ServerTools.Handlers
         {
             if (ev.NewLevel == 2)
             {
-                Nametocheck2.Add($"{ev.Player.Nickname}");
+                Nametocheck2.Add($"{ev.Player.Sender.SenderId}");
                 ev.Player.Broadcast(10, $"{ServerTools.Instance.Config.Level2}");
             }
             if (ev.NewLevel == 5)
             {
-                Nametocheck.Add($"{ev.Player.Nickname}");
+                Nametocheck.Add($"{ev.Player.Sender.SenderId}");
                 ev.Player.Broadcast(10, $"{ServerTools.Instance.Config.Level5}");
             }
         }
@@ -32,7 +32,7 @@ namespace ServerTools.Handlers
             int randomNATOnum = rand.Next(ServerTools.Instance.Config.MTFNumber.Count);
             string randomWordnum = ServerTools.Instance.Config.MTFNumber[randomNATOnum];
 
-            Cassie.Message($"MtfUnit Epsilon 11 designated {randomWord} {randomWordnum} HasEntered AllRemaining AwaitingRecontainment pitch_0.3 .g6");
+            Cassie.Message($"MtfUnit Epsilon 11 designated {randomWord} {randomWordnum} HasEntered AllRemaining AwaitingRecontainment pitch_0.3 .g6 SCP subjects");
         }
 
         public void SpookyScream()

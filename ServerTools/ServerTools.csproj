@@ -87,6 +87,7 @@
     <Compile Include="Commands\079Noise.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Handlers\Player.cs" />
+    <Compile Include="Handlers\Server.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

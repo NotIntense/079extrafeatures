@@ -24,15 +24,15 @@ namespace ServerTools.Commands
                 return false;
             }
 
-            if (ServerTools.Instance.player.Nametocheck2.Contains(playerCommandSender.Nickname))
+            if (ServerTools.Instance.player.Nametocheck2.Contains(playerCommandSender.SenderId))
             {
-                if (cooldowns2.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd2) && DateTime.Now < cooldownEnd2)
+                if (cooldowns2.TryGetValue(playerCommandSender.SenderId, out DateTime cooldownEnd2) && DateTime.Now < cooldownEnd2)
                 {
                     response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd2 - DateTime.Now).TotalSeconds)} seconds.";
                     return false;
                 }
                 ServerTools.Instance.player.SpookyScream();
-                cooldowns2[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(100);
+                cooldowns2[playerCommandSender.SenderId] = DateTime.Now.AddSeconds(100);
                 response = "079 Noise made";
                 return true;
             }
