@@ -10,13 +10,13 @@ namespace ServerTools
         public bool IsEnabled { get; set; } = true;
 
         [Description("No need to touch this :3")]
-        public bool Debug { get; set; }
+        public bool Debug { get; set; } = false;
 
         [Description("The message that appears when 079 gets level 5")]
         public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one!";
 
         [Description("The message that appears when 079 gets level 2")]
-        public string Level2 { get; set; } = "You can now play a scary noise! Use .079noise to play a sPoOkY sound.";
+        public string Level2 { get; set; } = "You can now play a scary noise! Use .079noise to play a weird sound.";
 
         [Description("The NATO phonetic alphabetic words C.A.S.S.I.E will call when .fakeMTF is used. YOU HAVE TO USE NATO_ FOR IT TO WORK")]
         public List<string> MTFNATO { get; set; } = new List<string>
@@ -47,7 +47,8 @@ namespace ServerTools
             "NATO_W",
             "NATO_X",
             "NATO_Y",
-            "NATO_Z" };
+            "NATO_Z" 
+        };
 
         [Description("The numbers C.A.S.S.I.E will use when .fakeMTF is used")]
         public List<string> MTFNumber { get; set; } = new List<string> 
