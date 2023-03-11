@@ -2,7 +2,6 @@
 using Exiled.API.Features;
 using Exiled.Events.Handlers;
 using System;
-using Server = Exiled.Events.Handlers.Server;
 
 namespace ServerTools
 {
@@ -14,7 +13,7 @@ namespace ServerTools
         public override string Author => "NotIntense#1613";
         public override PluginPriority Priority => PluginPriority.Medium;
 
-        public override Version Version => new Version(4, 0, 1);
+        public override Version Version => new Version(4, 0, 2);
         public override Version RequiredExiledVersion => new Version(6, 0, 0);
 
         public override void OnEnabled()
@@ -43,7 +42,7 @@ namespace ServerTools
         public void UnRegisterEvents()
         {
             Scp079.GainingLevel -= player.SCPLevel;
-        
-            player = null;}
+            player = null;
+        }
     }
 }

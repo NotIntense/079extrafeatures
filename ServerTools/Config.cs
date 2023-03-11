@@ -12,6 +12,9 @@ namespace ServerTools
         [Description("No need to touch this :3")]
         public bool Debug { get; set; } = false;
 
+        [Description("If enabled, SCP-079 will cause a blackout when .079noise is used")]
+        public bool SCP079CausesBlackouts { get; set; } = false;
+
         [Description("The message that appears when 079 gets level 5")]
         public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one!";
 
@@ -20,7 +23,7 @@ namespace ServerTools
 
         [Description("The NATO phonetic alphabetic words C.A.S.S.I.E will call when .fakeMTF is used. YOU HAVE TO USE NATO_ FOR IT TO WORK")]
         public List<string> MTFNATO { get; set; } = new List<string>
-        { 
+        {
             "NATO_A",
             "NATO_B",
             "NATO_D",
@@ -47,11 +50,11 @@ namespace ServerTools
             "NATO_W",
             "NATO_X",
             "NATO_Y",
-            "NATO_Z" 
+            "NATO_Z"
         };
 
         [Description("The numbers C.A.S.S.I.E will use when .fakeMTF is used")]
-        public List<string> MTFNumber { get; set; } = new List<string> 
+        public List<string> MTFNumber { get; set; } = new List<string>
         {
             "1",
             "2",
@@ -67,7 +70,7 @@ namespace ServerTools
             "12",
             "13",
             "14",
-            "15" 
+            "15"
         };
     }
 }

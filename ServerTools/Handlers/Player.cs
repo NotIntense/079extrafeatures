@@ -12,7 +12,6 @@ namespace ServerTools.Handlers
 
         public void SCPLevel(GainingLevelEventArgs ev)
         {
-            Log.Info(ev.NewLevel);
             if (ev.NewLevel == 2)
             {
                 Nametocheck2.Add($"{ev.Player.Nickname}");
@@ -33,11 +32,17 @@ namespace ServerTools.Handlers
             int randomNATOnum = rand.Next(ServerTools.Instance.Config.MTFNumber.Count);
             string randomWordnum = ServerTools.Instance.Config.MTFNumber[randomNATOnum];
 
-            Cassie.Message($"MtfUnit Epsilon 11 designated {randomWord} {randomWordnum} HasEntered AllRemaining AwaitingRecontainment pitch_0.1 .g6");
+            Cassie.Message($"MtfUnit Epsilon 11 designated {randomWord} {randomWordnum} HasEntered AllRemaining AwaitingRecontainment pitch_0.3 .g6");
         }
 
         public void SpookyScream()
         {
+            if (ServerTools.Instance.Config.SCP079CausesBlackouts)
+            {
+                Map.TurnOffAllLights(zoneTypes: Exiled.API.Enums.ZoneType.LightContainment, duration: 15);
+                Map.TurnOffAllLights(zoneTypes: Exiled.API.Enums.ZoneType.HeavyContainment, duration: 15);
+            }
+
             Cassie.Message("pitch_0.1 .g7", isNoisy: false, isSubtitles: false);
         }
     }

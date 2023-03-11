@@ -31,7 +31,6 @@ namespace ServerTools.Commands
                     response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd2 - DateTime.Now).TotalSeconds)} seconds.";
                     return false;
                 }
-
                 ServerTools.Instance.player.SpookyScream();
                 cooldowns2[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(100);
                 response = "079 Noise made";
