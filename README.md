@@ -4,6 +4,7 @@
 
 Adds some extra commands for 079 when leveling up
 
+SCP-079 CAN disable lights when .079noise is activated *but* it is disabled by default so make sure to go to .config if you want to enable it!
 
 When 079 gets to level 2, a message will appear (customizable from the .config) telling the player they can use .079noise to play a sound throughout the facilty
 
