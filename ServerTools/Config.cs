@@ -13,7 +13,7 @@ namespace ServerTools
         public bool Debug { get; set; } = false;
 
         [Description("The message that appears when 079 gets level 5")]
-        public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one! I thin i got this";
+        public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one!";
 
         [Description("The message that appears when 079 gets level 2")]
         public string Level2 { get; set; } = "You can now play a scary noise! Use .079noise to play a sPoOkY sound.";
