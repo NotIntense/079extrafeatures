@@ -1,6 +1,7 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.Events.Handlers;
+using System;
 using Server = Exiled.Events.Handlers.Server;
 
 namespace ServerTools
@@ -8,7 +9,13 @@ namespace ServerTools
     public class ServerTools : Plugin<Config>
     {
         public static ServerTools Instance { get; private set; }
+        public override string Name => "079extra";
+        public override string Prefix => "079ex";
+        public override string Author => "NotIntense#1613";
         public override PluginPriority Priority { get; } = PluginPriority.Medium;
+
+        public override Version Version => new Version(4, 0, 0);
+        public override Version RequiredExiledVersion => new Version(6, 0, 0);
 
         public override void OnEnabled()
         {
