@@ -23,29 +23,23 @@ namespace ServerTools.Commands
                 response = "You must run this command as a client";
                 return false;
             }
-            else
+
+            if (ServerTools.Instance.player.Nametocheck2.Contains(playerCommandSender.Nickname))
             {
-                if (ServerTools.Instance.player.Nametocheck2.Contains(playerCommandSender.Nickname))
+                if (cooldowns2.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd2) && DateTime.Now < cooldownEnd2)
                 {
-                    if (cooldowns2.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd2) && DateTime.Now < cooldownEnd2)
-                    {
-                        response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd2 - DateTime.Now).TotalSeconds)} seconds.";
-                        return false;
-                    }
-                    else
-                    {
-                        response = "079 Noise made";
-                        ServerTools.Instance.player.SpookyScream();
-                        cooldowns2[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(100);
-                        return true;
-                    }
-                }
-                else
-                {
-                    response = "You cannot use this command yet";
+                    response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd2 - DateTime.Now).TotalSeconds)} seconds.";
                     return false;
                 }
+
+                ServerTools.Instance.player.SpookyScream();
+                cooldowns2[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(100);
+                response = "079 Noise made";
+                return true;
             }
+
+            response = "You cannot use this command yet";
+            return false;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ServerTools.Commands
 
         public string[] Aliases => new[] { "fakeMTF", "fm" };
 
-        public string Description => "Fakes a MTF broadcast to all players";
+        public string Description => "Fakes an MTF broadcast to all players";
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
@@ -24,29 +24,23 @@ namespace ServerTools.Commands
                 response = "You must run this command as a client";
                 return false;
             }
-            else
+
+            if (ServerTools.Instance.player.Nametocheck.Contains(playerCommandSender.Nickname))
             {
-                if (ServerTools.Instance.player.Nametocheck.Contains(playerCommandSender.Nickname))
+                if (cooldowns.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd) && DateTime.Now < cooldownEnd)
                 {
-                    if (cooldowns.TryGetValue(playerCommandSender.Nickname, out DateTime cooldownEnd) && DateTime.Now < cooldownEnd)
-                    {
-                        response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd - DateTime.Now).TotalSeconds)} seconds.";
-                        return false;
-                    }
-                    else
-                    {
-                        response = "Faked MTF announcement!";
-                        ServerTools.Instance.player.MTFAnnoucments();
-                        cooldowns[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(120);
-                        return true;
-                    }
-                }
-                else
-                {
-                    response = "You cannot use this command yet";
+                    response = $"This command is on cooldown. Please wait {Math.Ceiling((cooldownEnd - DateTime.Now).TotalSeconds)} seconds.";
                     return false;
                 }
+
+                ServerTools.Instance.player.MTFAnnoucments();
+                cooldowns[playerCommandSender.Nickname] = DateTime.Now.AddSeconds(120);
+                response = "Faked MTF announcement!";
+                return true;
             }
+
+            response = "You cannot use this command yet";
+            return false;
         }
     }
 }
