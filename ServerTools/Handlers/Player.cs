@@ -7,8 +7,6 @@ namespace ServerTools.Handlers
 {
     public class SPlayer
     {
-        public ServerTools Plugin { get; set; }
-        public Config Config { get; set; }
         public List<string> Nametocheck = new List<string>();
         public List<string> Nametocheck2 = new List<string>();
 
