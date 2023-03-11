@@ -10,7 +10,7 @@ namespace ServerTools
         public bool IsEnabled { get; set; } = true;
 
         [Description("No need to touch this :3")]
-        public bool Debug { get; set; }
+        public bool Debug { get; set; } = false;
 
         [Description("The message that appears when 079 gets level 5")]
         public string Level5 { get; set; } = "You can now fake MTF broadcasts! Use .fakeMTF to fake one!";
