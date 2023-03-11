@@ -1,4 +1,7 @@
 # 079extrafeatures
+
+[![Downloads](https://static.pepy.tech/badge/video2tfrecord)](https://pepy.tech/project/video2tfrecord)
+
 Adds some extra commands for 079 when leveling up
 
 
