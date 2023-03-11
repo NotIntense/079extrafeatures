@@ -11,8 +11,6 @@ The allowed NATO words are :
             "NATO_A",
             "NATO_B",
             "NATO_D",
-            "NATO_C",
-            "NATO_D",
             "NATO_E",
             "NATO_F",
             "NATO_G",
