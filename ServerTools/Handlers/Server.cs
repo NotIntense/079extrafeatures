@@ -6,7 +6,6 @@ namespace ServerTools.Handlers
     {
         public void OnWaitingForPlayers()
         {
-            Log.Info("ServerTools Version 3.0 : NOT FOR PUBLIC USE");
         }
     }
 }
