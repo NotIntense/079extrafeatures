@@ -8,7 +8,7 @@ SCP-079 CAN disable lights when .079noise is activated *but* it is disabled by d
 
 When 079 gets to level 2, a message will appear (customizable from the .config) telling the player they can use .079noise to play a sound throughout the facilty
 
-When 079 gets to level 5, a message will appear (customizable from the .config) telling the player they can fake a MTF spawnwave by having C.A.S.S.I.E pick random NATO words 
+When 079 gets to level 5, a message will appear (customizable from the .config, And I suggest the numbering be through 1-15) telling the player they can fake a MTF spawnwave by having C.A.S.S.I.E pick random NATO words 
 and numbers from the .config and play them
 
 The allowed NATO words are : 
@@ -39,4 +39,4 @@ The allowed NATO words are :
             "NATO_Y",
             "NATO_Z"
             
-            And I suggest the numbering be through 1-15
+       
