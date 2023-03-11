@@ -15,7 +15,7 @@ namespace ServerTools.Handlers
         public void SCPLevel(GainingLevelEventArgs ev)
         {
             Log.Info(ev.NewLevel);
-            if (ev.NewLevel >= 2)
+            if (ev.NewLevel == 2)
             {
                 Nametocheck2.Add($"{ev.Player.Nickname}");
                 ev.Player.Broadcast(10, $"{ServerTools.Instance.Config.Level2}");
