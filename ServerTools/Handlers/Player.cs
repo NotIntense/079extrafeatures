@@ -7,15 +7,13 @@ namespace ServerTools.Handlers
 {
     public class SPlayer
     {
-        public ServerTools Plugin { get; set; }
-        public Config Config { get; set; }
         public List<string> Nametocheck = new List<string>();
         public List<string> Nametocheck2 = new List<string>();
 
         public void SCPLevel(GainingLevelEventArgs ev)
         {
             Log.Info(ev.NewLevel);
-            if (ev.NewLevel >= 2)
+            if (ev.NewLevel == 2)
             {
                 Nametocheck2.Add($"{ev.Player.Nickname}");
                 ev.Player.Broadcast(10, $"{ServerTools.Instance.Config.Level2}");
