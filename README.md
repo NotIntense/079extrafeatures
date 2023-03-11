@@ -10,6 +10,7 @@ and numbers from the .config and play them
 The allowed NATO words are : 
             "NATO_A",
             "NATO_B",
+            "NATO_C",
             "NATO_D",
             "NATO_E",
             "NATO_F",
