@@ -20,7 +20,8 @@ namespace ServerTools
 
         [Description("The NATO phonetic alphabetic words C.A.S.S.I.E will call when .fakeMTF is used. YOU HAVE TO USE NATO_ FOR IT TO WORK")]
         public List<string> MTFNATO { get; set; } = new List<string>
-          { "NATO_A",
+        { 
+            "NATO_A",
             "NATO_B",
             "NATO_D",
             "NATO_C",
@@ -49,7 +50,8 @@ namespace ServerTools
             "NATO_Z" };
 
         [Description("The numbers C.A.S.S.I.E will use when .fakeMTF is used")]
-        public List<string> MTFNumber { get; set; } = new List<string> {
+        public List<string> MTFNumber { get; set; } = new List<string> 
+        {
             "1",
             "2",
             "3",
@@ -64,6 +66,7 @@ namespace ServerTools
             "12",
             "13",
             "14",
-            "15" };
+            "15" 
+        };
     }
 }
